@@ -81,38 +81,4 @@ document.addEventListener('DOMContentLoaded', () => {
             this.style.transform = 'scale(1)';
         });
     });
-
-    // Form submission
-    const form = document.querySelector('form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Show success message
-            const formInputs = form.querySelectorAll('input, textarea');
-            formInputs.forEach(input => {
-                input.style.animation = 'fadeOut 0.5s ease-out forwards';
-            });
-
-            setTimeout(() => {
-                alert('¡Mensaje enviado! Nos pondremos en contacto pronto.');
-                form.reset();
-                formInputs.forEach(input => {
-                    input.style.animation = 'fadeIn 0.5s ease-out forwards';
-                });
-            }, 500);
-        });
-    }
-});
-
-// Parallax effect on mouse move
-document.addEventListener('mousemove', (e) => {
-    const parallaxElements = document.querySelectorAll('.hero-title, .section-title');
-    const x = e.clientX / window.innerWidth;
-    const y = e.clientY / window.innerHeight;
-
-    parallaxElements.forEach(element => {
-        const speed = 10;
-        element.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-    });
 });

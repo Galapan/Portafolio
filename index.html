@@ -1,568 +1,467 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <!-- Estilos con Tailwind CSS desde el CLI -->
-    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="src/output.css" />
     <!-- Estilos propios -->
-    <link rel="stylesheet" href="src/input.css">
+    <link rel="stylesheet" href="src/input.css" />
     <title>Aetherys - Software Solutions</title>
-</head>
-<body class="overflow-x-hidden">
+  </head>
+  <body class="overflow-x-hidden">
     <!-- Canvas para partículas -->
-    <canvas id="particleCanvas" class="fixed inset-0 w-full h-full pointer-events-none"></canvas>
+    <canvas
+      id="particleCanvas"
+      class="fixed inset-0 w-full h-full pointer-events-none"
+    ></canvas>
 
     <!-- Logo Aetherys estático en esquina inferior -->
-    <div class="fixed bottom-8 left-8 z-40 pointer-events-none">
-        <div class="text-8xl font-light text-white/10">Λ</div>
+    <div class="fixed bottom-8 right-8 z-50 select-none">
+      <div class="text-9xl font-light text-white/10">Λ</div>
     </div>
 
     <!-- Contenedor principal -->
     <div id="mainContainer" class="relative w-full min-h-screen">
-        
-        <!-- SECCIÓN 1: BIENVENIDA -->
-        <section id="bienvenida" class="section min-h-screen w-full flex flex-col justify-center items-start px-12 py-20">
-            <!-- Navbar -->
-            <nav class="fixed top-0 left-0 right-0 z-50 px-12 py-6 flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <span class="text-2xl font-light text-white">Λ</span>
-                    <span class="text-xl font-light text-white">Aetherys</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#bienvenida" class="nav-link text-white hover:text-purple-300 transition-colors">Bienvenida</a>
-                    <a href="#proyectos" class="nav-link text-white hover:text-purple-300 transition-colors">Proyectos</a>
-                    <a href="#servicios" class="nav-link text-white hover:text-purple-300 transition-colors">Servicios</a>
-                    <a href="#nosotros" class="nav-link text-white hover:text-purple-300 transition-colors">Nosotros</a>
-                    <a href="#contacto" class="nav-link text-white hover:text-purple-300 transition-colors">Contacto</a>
-                </div>
-            </nav>
+      <!-- SECCIÓN 1: BIENVENIDA -->
+      <section
+        id="bienvenida"
+        class="section min-h-screen w-full flex flex-col justify-center items-start px-12 py-20"
+      >
+        <!-- Navbar -->
+        <nav
+          class="fixed top-0 left-0 right-0 z-50 px-12 py-6 flex justify-between items-center"
+        >
+          <div class="flex items-center space-x-2">
+            <span class="text-2xl font-light text-white">Λetherys</span>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              href="#bienvenida"
+              class="nav-link text-white hover:text-purple-300 transition-colors"
+              >Bienvenida</a
+            >
+            <a
+              href="#proyectos"
+              class="nav-link text-white hover:text-purple-300 transition-colors"
+              >Proyectos</a
+            >
+            <a
+              href="#servicios"
+              class="nav-link text-white hover:text-purple-300 transition-colors"
+              >Servicios</a
+            >
+            <a
+              href="#nosotros"
+              class="nav-link text-white hover:text-purple-300 transition-colors"
+              >Nosotros</a
+            >
+            <a
+              href="#contacto"
+              class="nav-link text-white hover:text-purple-300 transition-colors"
+              >Contacto</a
+            >
+          </div>
+        </nav>
 
-            <div class="max-w-4xl">
-                <h1 class="hero-title text-7xl md:text-8xl font-light text-white mb-8 leading-tight">
-                    Desarrollamos<br>más que software,<br>creamos experiencias.
-                </h1>
-                <p class="hero-text text-lg text-gray-300 mb-12 max-w-2xl leading-relaxed">
-                    Ofrecemos soluciones de software modernas, desarrolladas con profesionalismo enfoque en crear experiencias digitales eficientes, atractivas y de alto valor para nuestros clientes.
+        <div class="max-w-4xl">
+          <h1
+            class="hero-title text-7xl md:text-8xl font-light text-white mb-8 leading-tight"
+          >
+            Desarrollamos<br />más que software,<br />creamos experiencias.
+          </h1>
+          <p
+            class="hero-text text-lg text-gray-300 mb-12 max-w-2xl leading-relaxed"
+          >
+            Ofrecemos soluciones de software modernas, desarrolladas con
+            profesionalismo enfoque en crear experiencias digitales eficientes,
+            atractivas y de alto valor para nuestros clientes.
+          </p>
+        <a
+            href="#proyectos"
+            class="hero-button glass-button px-8 py-3 rounded-full text-white font-medium hover:bg-white/20 transition-all"
+        >
+            Ver catalogo
+        </a>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 2: PROYECTOS -->
+      <section
+        id="proyectos"
+        class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20"
+      >
+        <h2
+          class="section-title text-5xl md:text-6xl font-light text-white text-center mb-4"
+        >
+          Algunos de los proyectos<br />que hemos desarrollado
+        </h2>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 w-full max-w-7xl"
+        >
+          <!-- Proyecto 1 -->
+          <div
+            class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group"
+          >
+            <div class="mb-4">
+              <i
+                class="fas fa-mobile-alt text-2xl text-white/80 group-hover:text-purple-300 transition-colors"
+              ></i>
+            </div>
+            <h3 class="project-title text-xl font-semibold text-white mb-2">
+              FonitoStore
+            </h3>
+            <p class="project-text text-sm text-gray-300 mb-4">
+              Tienda en línea especializada en la venta de iPhones, accesorios
+              administrativo robusto para la gestión de productos.
+            </p>
+            <a
+              href="#"
+              class="text-purple-300 hover:text-purple-200 transition-colors font-medium"
+              >Visitar sitio →</a
+            >
+          </div>
+
+          <!-- Proyecto 2 -->
+          <div
+            class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group"
+          >
+            <div class="mb-4">
+              <i
+                class="fas fa-clinic-medical text-2xl text-white/80 group-hover:text-purple-300 transition-colors"
+              ></i>
+            </div>
+            <h3 class="project-title text-xl font-semibold text-white mb-2">
+              Veterinaria JOBSA
+            </h3>
+            <p class="project-text text-sm text-gray-300 mb-4">
+              Plataforma web diseñada para gestionar citas de manera sencilla y
+              segura.
+            </p>
+            <a
+              href="#"
+              class="text-purple-300 hover:text-purple-200 transition-colors font-medium"
+              >Visitar sitio →</a
+            >
+          </div>
+
+          <!-- Proyecto 3 -->
+          <div
+            class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group"
+          >
+            <div class="mb-4">
+              <i
+                class="fas fa-cake-candles text-2xl text-white/80 group-hover:text-purple-300 transition-colors"
+              ></i>
+            </div>
+            <h3 class="project-title text-xl font-semibold text-white mb-2">
+              Postres personalizados
+            </h3>
+            <p class="project-text text-sm text-gray-300 mb-4">
+              Plataforma de venta de postres personalizados y pedidos en línea
+              con dashboard administrativo.
+            </p>
+            <a
+              href="#"
+              class="text-purple-300 hover:text-purple-200 transition-colors font-medium"
+              >Visitar sitio →</a
+            >
+          </div>
+
+          <!-- Proyecto 4 -->
+          <div
+            class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group"
+          >
+            <div class="mb-4">
+              <i
+                class="fas fa-graduation-cap text-2xl text-white/80 group-hover:text-purple-300 transition-colors"
+              ></i>
+            </div>
+            <h3 class="project-title text-xl font-semibold text-white mb-2">
+              SAIUTT 2.0
+            </h3>
+            <p class="project-text text-sm text-gray-300 mb-4">
+              Plataforma web moderna y eficiente que automatiza procesos de la
+              Universidad Tecnológica de Tlaxcala.
+            </p>
+            <a
+              href="#"
+              class="text-purple-300 hover:text-purple-200 transition-colors font-medium"
+              >Visitar sitio →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 3: SERVICIOS -->
+      <section
+        id="servicios"
+        class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20"
+      >
+        <h2
+          class="section-title text-5xl md:text-6xl font-light text-white text-center mb-4"
+        >
+          ¿Que ofrecemos?
+        </h2>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 w-full max-w-6xl"
+        >
+          <div class="flex flex-col space-y-12">
+            <div class="service-item">
+              <h3 class="service-title text-2xl font-semibold text-white mb-2">
+                +30 Tecnologías dominadas
+              </h3>
+              <p class="service-text text-gray-300">
+                Entre lenguajes de programación, Frameworks, Bases de datos,
+                etc.
+              </p>
+            </div>
+            <div class="service-item">
+              <h3 class="service-title text-2xl font-semibold text-white mb-2">
+                +10 Años de experiencia combinados
+              </h3>
+              <p class="service-text text-gray-300">Desarrollando software</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-8">
+            <div class="text-left">
+              <p class="text-gray-300 mb-6">
+                En cada proyecto nos enfocamos primero en entender
+                <span class="text-purple-300 font-medium"
+                  >lo que realmente necesita el cliente</span
+                >.
+              </p>
+              <p class="text-gray-300">
+                Adaptamos nuestras soluciones a sus procesos, tiempos y
+                objetivos, asegurando de que el resultado final sea útil desde
+                el primer día. Nos gusta acompañar de cerca todo el desarrollo,
+                aclarar dudas y ajustar lo necesario para que cada sistema o
+                aplicación funcione tal como el cliente lo imaginó... o incluso
+                mejor.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div
+                class="glass-card p-4 rounded-lg backdrop-blur-md border border-white/20 hover:border-white/40 transition-all"
+              >
+                <h4 class="text-white font-semibold mb-2">
+                  Disponibilidad y atención
+                </h4>
+                <p class="text-sm text-gray-300">
+                  Con la capacidad de atenderte y comentario en todas las dudas
                 </p>
-                <button class="hero-button glass-button px-8 py-3 rounded-full text-white font-medium hover:bg-white/20 transition-all">
-                    Ver catalogo
-                </button>
+              </div>
+              <div
+                class="glass-card p-4 rounded-lg backdrop-blur-md border border-white/20 hover:border-white/40 transition-all"
+              >
+                <h4 class="text-white font-semibold mb-2">
+                  Innovación constante
+                </h4>
+                <p class="text-sm text-gray-300">
+                  Buscamos siempre nuevas ideas, tecnologías y soluciones
+                  creativas
+                </p>
+              </div>
             </div>
+          </div>
+        </div>
 
-            <!-- Indicador de scroll -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-                <span class="text-gray-400 text-sm mb-2">Sigue explorando</span>
-                <i class="fas fa-chevron-down text-gray-400"></i>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-16 w-full max-w-7xl"
+        >
+          <div
+            class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center"
+          >
+            <i class="fas fa-code text-3xl text-purple-300 mb-4"></i>
+            <h4 class="text-white font-semibold">Desarrollo de Sistemas Web</h4>
+            <p class="text-xs text-gray-300 mt-2">
+              Creamos sistemas y plataformas en línea a la medida
+            </p>
+          </div>
+
+          <div
+            class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center"
+          >
+            <i class="fas fa-chart-line text-3xl text-purple-300 mb-4"></i>
+            <h4 class="text-white font-semibold">
+              Dashboards y Sistemas de Gestión
+            </h4>
+            <p class="text-xs text-gray-300 mt-2">
+              Construimos paneles con métricas, reportes y control de procesos
+            </p>
+          </div>
+
+          <div
+            class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center"
+          >
+            <i class="fas fa-mobile text-3xl text-purple-300 mb-4"></i>
+            <h4 class="text-white font-semibold">Desarrollo de Apps Móviles</h4>
+            <p class="text-xs text-gray-300 mt-2">
+              Diseñamos apps intuitivas para Android
+            </p>
+          </div>
+
+          <div
+            class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center"
+          >
+            <i class="fas fa-shopping-cart text-3xl text-purple-300 mb-4"></i>
+            <h4 class="text-white font-semibold">
+              Tiendas en Línea (E-commerce)
+            </h4>
+            <p class="text-xs text-gray-300 mt-2">
+              Desarrollamos tiendas en línea completas y seguras
+            </p>
+          </div>
+
+          <div
+            class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center"
+          >
+            <i class="fas fa-brain text-3xl text-purple-300 mb-4"></i>
+            <h4 class="text-white font-semibold">
+              Integraciones IA y Automatización
+            </h4>
+            <p class="text-xs text-gray-300 mt-2">
+              Conectamos tus sistemas con APIs y servicios externos integramos
+              IA
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: NOSOTROS -->
+      <section
+        id="nosotros"
+        class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20"
+      >
+        <h2
+          class="section-title text-5xl md:text-6xl font-light text-white text-center mb-16"
+        >
+          Nuestros valores<br />como equipo
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
+          <div class="value-item">
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-lightbulb text-2xl text-purple-300 mt-1"></i>
+              <div>
+                <h3 class="value-title text-2xl font-semibold text-white mb-3">
+                  Innovación constante
+                </h3>
+                <p class="value-text text-gray-300">
+                  Buscamos siempre nuevas ideas, tecnologías y soluciones
+                  creativas para mantenernos a la vanguardia.
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <!-- SECCIÓN 2: PROYECTOS -->
-        <section id="proyectos" class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20">
-            <h2 class="section-title text-5xl md:text-6xl font-light text-white text-center mb-4">
-                Algunos de los proyectos<br>que hemos desarrollado
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 w-full max-w-7xl">
-                <!-- Proyecto 1 -->
-                <div class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group">
-                    <div class="mb-4">
-                        <i class="fas fa-mobile-alt text-2xl text-white/80 group-hover:text-purple-300 transition-colors"></i>
-                    </div>
-                    <h3 class="project-title text-xl font-semibold text-white mb-2">FonitoStore</h3>
-                    <p class="project-text text-sm text-gray-300 mb-4">
-                        Tienda en línea especializada en la venta de iPhones, accesorios administrativo robusto para la gestión de productos.
-                    </p>
-                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors font-medium">Visitar sitio →</a>
-                </div>
-
-                <!-- Proyecto 2 -->
-                <div class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group">
-                    <div class="mb-4">
-                        <i class="fas fa-clinic-medical text-2xl text-white/80 group-hover:text-purple-300 transition-colors"></i>
-                    </div>
-                    <h3 class="project-title text-xl font-semibold text-white mb-2">Veterinaria JOBSA</h3>
-                    <p class="project-text text-sm text-gray-300 mb-4">
-                        Plataforma web diseñada para gestionar citas de manera sencilla y segura.
-                    </p>
-                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors font-medium">Visitar sitio →</a>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group">
-                    <div class="mb-4">
-                        <i class="fas fa-cake-candles text-2xl text-white/80 group-hover:text-purple-300 transition-colors"></i>
-                    </div>
-                    <h3 class="project-title text-xl font-semibold text-white mb-2">Postres personalizados</h3>
-                    <p class="project-text text-sm text-gray-300 mb-4">
-                        Plataforma de venta de postres personalizados y pedidos en línea con dashboard administrativo.
-                    </p>
-                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors font-medium">Visitar sitio →</a>
-                </div>
-
-                <!-- Proyecto 4 -->
-                <div class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group">
-                    <div class="mb-4">
-                        <i class="fas fa-graduation-cap text-2xl text-white/80 group-hover:text-purple-300 transition-colors"></i>
-                    </div>
-                    <h3 class="project-title text-xl font-semibold text-white mb-2">SAIUTT 2.0</h3>
-                    <p class="project-text text-sm text-gray-300 mb-4">
-                        Plataforma web moderna y eficiente que automatiza procesos de la Universidad Tecnológica de Tlaxcala.
-                    </p>
-                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors font-medium">Visitar sitio →</a>
-                </div>
+          <div class="value-item">
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-users text-2xl text-purple-300 mt-1"></i>
+              <div>
+                <h3 class="value-title text-2xl font-semibold text-white mb-3">
+                  Profesionalismo joven
+                </h3>
+                <p class="value-text text-gray-300">
+                  Actuamos con responsabilidad, compromiso y calidad, combinando
+                  frescura juvenil con un alto estándar profesional.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <button class="mt-12 glass-button px-8 py-3 rounded-full text-white font-medium hover:bg-white/20 transition-all">
-                Ver mas
-            </button>
-        </section>
-
-        <!-- SECCIÓN 3: SERVICIOS -->
-        <section id="servicios" class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20">
-            <h2 class="section-title text-5xl md:text-6xl font-light text-white text-center mb-4">
-                ¿Que ofrecemos?
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 w-full max-w-6xl">
-                <div class="flex flex-col space-y-12">
-                    <div class="service-item">
-                        <h3 class="service-title text-2xl font-semibold text-white mb-2">+30 Tecnologías dominadas</h3>
-                        <p class="service-text text-gray-300">Entre lenguajes de programación, Frameworks, Bases de datos, etc.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3 class="service-title text-2xl font-semibold text-white mb-2">+10 Años de experiencia combinados</h3>
-                        <p class="service-text text-gray-300">Desarrollando software</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col space-y-8">
-                    <div class="text-left">
-                        <p class="text-gray-300 mb-6">
-                            En cada proyecto nos enfocamos primero en entender <span class="text-purple-300 font-medium">lo que realmente necesita el cliente</span>.
-                        </p>
-                        <p class="text-gray-300">
-                            Adaptamos nuestras soluciones a sus procesos, tiempos y objetivos, asegurando de que el resultado final sea útil desde el primer día. Nos gusta acompañar de cerca todo el desarrollo, aclarar dudas y ajustar lo necesario para que cada sistema o aplicación funcione tal como el cliente lo imaginó... o incluso mejor.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="glass-card p-4 rounded-lg backdrop-blur-md border border-white/20 hover:border-white/40 transition-all">
-                            <h4 class="text-white font-semibold mb-2">Disponibilidad y atención</h4>
-                            <p class="text-sm text-gray-300">Con la capacidad de atenderte y comentario en todas las dudas</p>
-                        </div>
-                        <div class="glass-card p-4 rounded-lg backdrop-blur-md border border-white/20 hover:border-white/40 transition-all">
-                            <h4 class="text-white font-semibold mb-2">Innovación constante</h4>
-                            <p class="text-sm text-gray-300">Buscamos siempre nuevas ideas, tecnologías y soluciones creativas</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="value-item">
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-handshake text-2xl text-purple-300 mt-1"></i>
+              <div>
+                <h3 class="value-title text-2xl font-semibold text-white mb-3">
+                  Trabajo en equipo y crecimiento
+                </h3>
+                <p class="value-text text-gray-300">
+                  Colaboramos, aprendemos juntos y potenciamos el talento de
+                  cada integrante para alcanzar resultados excepcionales.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-16 w-full max-w-7xl">
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <i class="fas fa-code text-3xl text-purple-300 mb-4"></i>
-                    <h4 class="text-white font-semibold">Desarrollo de Sistemas Web</h4>
-                    <p class="text-xs text-gray-300 mt-2">Creamos sistemas y plataformas en línea a la medida</p>
-                </div>
-
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <i class="fas fa-chart-line text-3xl text-purple-300 mb-4"></i>
-                    <h4 class="text-white font-semibold">Dashboards y Sistemas de Gestión</h4>
-                    <p class="text-xs text-gray-300 mt-2">Construimos paneles con métricas, reportes y control de procesos</p>
-                </div>
-
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <i class="fas fa-mobile text-3xl text-purple-300 mb-4"></i>
-                    <h4 class="text-white font-semibold">Desarrollo de Apps Móviles</h4>
-                    <p class="text-xs text-gray-300 mt-2">Diseñamos apps intuitivas para Android</p>
-                </div>
-
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <i class="fas fa-shopping-cart text-3xl text-purple-300 mb-4"></i>
-                    <h4 class="text-white font-semibold">Tiendas en Línea (E-commerce)</h4>
-                    <p class="text-xs text-gray-300 mt-2">Desarrollamos tiendas en línea completas y seguras</p>
-                </div>
-
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <i class="fas fa-brain text-3xl text-purple-300 mb-4"></i>
-                    <h4 class="text-white font-semibold">Integraciones IA y Automatización</h4>
-                    <p class="text-xs text-gray-300 mt-2">Conectamos tus sistemas con APIs y servicios externos integramos IA</p>
-                </div>
+          <div class="value-item">
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-gem text-2xl text-purple-300 mt-1"></i>
+              <div>
+                <h3 class="value-title text-2xl font-semibold text-white mb-3">
+                  Diseño con propósito
+                </h3>
+                <p class="value-text text-gray-300">
+                  Creamos productos modernos, elegantes y funcionales, cuidando
+                  cada detalle para ofrecer experiencias de alto valor.
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- SECCIÓN 4: NOSOTROS -->
-        <section id="nosotros" class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20">
-            <h2 class="section-title text-5xl md:text-6xl font-light text-white text-center mb-16">
-                Nuestros valores<br>como equipo
-            </h2>
+      <!-- SECCIÓN 5: CONTACTO -->
+      <section
+        id="contacto"
+        class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20"
+      >
+        <h2
+          class="section-title text-5xl md:text-6xl font-light text-white text-center mb-12"
+        >
+          Ponte en contacto
+        </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
-                <div class="value-item">
-                    <div class="flex items-start space-x-4">
-                        <i class="fas fa-lightbulb text-2xl text-purple-300 mt-1"></i>
-                        <div>
-                            <h3 class="value-title text-2xl font-semibold text-white mb-3">Innovación constante</h3>
-                            <p class="value-text text-gray-300">
-                                Buscamos siempre nuevas ideas, tecnologías y soluciones creativas para mantenernos a la vanguardia.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <form
+          class="glass-card w-full max-w-2xl p-8 rounded-2xl backdrop-blur-md border border-white/20"
+        >
+          <div class="mb-6">
+            <label class="block text-white font-medium mb-2">Nombre</label>
+            <input
+              type="text"
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40"
+              placeholder="Tu nombre"
+            />
+          </div>
 
-                <div class="value-item">
-                    <div class="flex items-start space-x-4">
-                        <i class="fas fa-users text-2xl text-purple-300 mt-1"></i>
-                        <div>
-                            <h3 class="value-title text-2xl font-semibold text-white mb-3">Profesionalismo joven</h3>
-                            <p class="value-text text-gray-300">
-                                Actuamos con responsabilidad, compromiso y calidad, combinando frescura juvenil con un alto estándar profesional.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+          <div class="mb-6">
+            <label class="block text-white font-medium mb-2">Email</label>
+            <input
+              type="email"
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40"
+              placeholder="tu@email.com"
+            />
+          </div>
 
-                <div class="value-item">
-                    <div class="flex items-start space-x-4">
-                        <i class="fas fa-handshake text-2xl text-purple-300 mt-1"></i>
-                        <div>
-                            <h3 class="value-title text-2xl font-semibold text-white mb-3">Trabajo en equipo y crecimiento</h3>
-                            <p class="value-text text-gray-300">
-                                Colaboramos, aprendemos juntos y potenciamos el talento de cada integrante para alcanzar resultados excepcionales.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+          <div class="mb-6">
+            <label class="block text-white font-medium mb-2">Mensaje</label>
+            <textarea
+              class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40 h-32"
+              placeholder="Tu mensaje..."
+            ></textarea>
+          </div>
 
-                <div class="value-item">
-                    <div class="flex items-start space-x-4">
-                        <i class="fas fa-gem text-2xl text-purple-300 mt-1"></i>
-                        <div>
-                            <h3 class="value-title text-2xl font-semibold text-white mb-3">Diseño con propósito</h3>
-                            <p class="value-text text-gray-300">
-                                Creamos productos modernos, elegantes y funcionales, cuidando cada detalle para ofrecer experiencias de alto valor.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 5: CONTACTO -->
-        <section id="contacto" class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20">
-            <h2 class="section-title text-5xl md:text-6xl font-light text-white text-center mb-12">
-                Ponte en contacto
-            </h2>
-            
-            <form class="glass-card w-full max-w-2xl p-8 rounded-2xl backdrop-blur-md border border-white/20">
-                <div class="mb-6">
-                    <label class="block text-white font-medium mb-2">Nombre</label>
-                    <input type="text" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40" placeholder="Tu nombre">
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-white font-medium mb-2">Email</label>
-                    <input type="email" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40" placeholder="tu@email.com">
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-white font-medium mb-2">Mensaje</label>
-                    <textarea class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40 h-32" placeholder="Tu mensaje..."></textarea>
-                </div>
-
-                <button type="submit" class="w-full glass-button px-6 py-3 rounded-lg text-white font-medium hover:bg-white/20 transition-all">
-                    Enviar mensaje
-                </button>
-            </form>
-        </section>
+          <button
+            type="submit"
+            class="w-full glass-button px-6 py-3 rounded-lg text-white font-medium hover:bg-white/20 transition-all"
+          >
+            Enviar mensaje
+          </button>
+        </form>
+      </section>
     </div>
 
     <script src="src/particles.js"></script>
     <script src="src/scroll.js"></script>
-</body>
-</html>
-        
-        <!-- SECCIÓN 1: BIENVENIDA -->
-        <section id="bienvenida" class="section min-h-screen w-full flex flex-col justify-center items-start px-12 py-20">
-            <!-- Navbar -->
-            <nav class="fixed top-0 left-0 right-0 z-50 px-12 py-6 flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <span class="text-2xl font-light text-white">Λ</span>
-                    <span class="text-xl font-light text-white">Aetherys</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#bienvenida" class="nav-link text-white hover:text-purple-300 transition-colors">Bienvenida</a>
-                    <a href="#proyectos" class="nav-link text-white hover:text-purple-300 transition-colors">Proyectos</a>
-                    <a href="#servicios" class="nav-link text-white hover:text-purple-300 transition-colors">Servicios</a>
-                    <a href="#nosotros" class="nav-link text-white hover:text-purple-300 transition-colors">Nosotros</a>
-                    <a href="#contacto" class="nav-link text-white hover:text-purple-300 transition-colors">Contacto</a>
-                </div>
-            </nav>
-
-            <div class="max-w-4xl">
-                <h1 class="hero-title text-7xl md:text-8xl font-light text-white mb-8 leading-tight">
-                    Desarrollamos<br>más que software,<br>creamos experiencias.
-                </h1>
-                <p class="hero-text text-lg text-gray-300 mb-12 max-w-2xl leading-relaxed">
-                    Ofrecemos soluciones de software modernas, desarrolladas con profesionalismo enfoque en crear experiencias digitales eficientes, atractivas y de alto valor para nuestros clientes.
-                </p>
-                <button class="hero-button glass-button px-8 py-3 rounded-full text-white font-medium hover:bg-white/20 transition-all">
-                    Ver catalogo
-                </button>
-            </div>
-
-            <!-- Indicador de scroll -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-                <span class="text-gray-400 text-sm mb-2">Sigue explorando</span>
-                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 2: PROYECTOS -->
-        <section id="proyectos" class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20">
-            <h2 class="section-title text-5xl md:text-6xl font-light text-white text-center mb-4">
-                Algunos de los proyectos<br>que hemos desarrollado
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 w-full max-w-7xl">
-                <!-- Proyecto 1 -->
-                <div class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group">
-                    <div class="mb-4">
-                        <svg class="w-12 h-12 text-white/80 group-hover:text-purple-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="project-title text-xl font-semibold text-white mb-2">FonitoStore</h3>
-                    <p class="project-text text-sm text-gray-300 mb-4">
-                        Tienda en línea especializada en la venta de iPhones, accesorios administrativo robusto para la gestión de productos.
-                    </p>
-                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors font-medium">Visitar sitio →</a>
-                </div>
-
-                <!-- Proyecto 2 -->
-                <div class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group">
-                    <div class="mb-4">
-                        <svg class="w-12 h-12 text-white/80 group-hover:text-purple-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM9 19c-4.35 0-8 1.343-8 3v2h16v-2c0-1.657-3.65-3-8-3z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="project-title text-xl font-semibold text-white mb-2">Veterinaria JOBSA</h3>
-                    <p class="project-text text-sm text-gray-300 mb-4">
-                        Plataforma web diseñada para gestionar citas de manera sencilla y segura.
-                    </p>
-                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors font-medium">Visitar sitio →</a>
-                </div>
-
-                <!-- Proyecto 3 -->
-                <div class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group">
-                    <div class="mb-4">
-                        <svg class="w-12 h-12 text-white/80 group-hover:text-purple-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="project-title text-xl font-semibold text-white mb-2">Postres personalizados</h3>
-                    <p class="project-text text-sm text-gray-300 mb-4">
-                        Plataforma de venta de postres personalizados y pedidos en línea con dashboard administrativo.
-                    </p>
-                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors font-medium">Visitar sitio →</a>
-                </div>
-
-                <!-- Proyecto 4 -->
-                <div class="project-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all group">
-                    <div class="mb-4">
-                        <svg class="w-12 h-12 text-white/80 group-hover:text-purple-300 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17.001c0 5.591 3.824 10.29 9 11.622m0-13c5.5 0 10 4.745 10 10.999 0 5.591-3.824 10.29-9 11.622"></path>
-                        </svg>
-                    </div>
-                    <h3 class="project-title text-xl font-semibold text-white mb-2">SAIUTT 2.0</h3>
-                    <p class="project-text text-sm text-gray-300 mb-4">
-                        Plataforma web moderna y eficiente que automatiza procesos de la Universidad Tecnológica de Tlaxcala.
-                    </p>
-                    <a href="#" class="text-purple-300 hover:text-purple-200 transition-colors font-medium">Visitar sitio →</a>
-                </div>
-            </div>
-
-            <button class="mt-12 glass-button px-8 py-3 rounded-full text-white font-medium hover:bg-white/20 transition-all">
-                Ver mas
-            </button>
-        </section>
-
-        <!-- SECCIÓN 3: SERVICIOS -->
-        <section id="servicios" class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20">
-            <h2 class="section-title text-5xl md:text-6xl font-light text-white text-center mb-4">
-                ¿Que ofrecemos?
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 w-full max-w-6xl">
-                <div class="flex flex-col space-y-12">
-                    <div class="service-item">
-                        <h3 class="service-title text-2xl font-semibold text-white mb-2">+30 Tecnologías dominadas</h3>
-                        <p class="service-text text-gray-300">Entre lenguajes de programación, Frameworks, Bases de datos, etc.</p>
-                    </div>
-                    <div class="service-item">
-                        <h3 class="service-title text-2xl font-semibold text-white mb-2">+10 Años de experiencia combinados</h3>
-                        <p class="service-text text-gray-300">Desarrollando software</p>
-                    </div>
-                </div>
-
-                <div class="flex flex-col space-y-8">
-                    <div class="text-left">
-                        <p class="text-gray-300 mb-6">
-                            En cada proyecto nos enfocamos primero en entender <span class="text-purple-300 font-medium">lo que realmente necesita el cliente</span>.
-                        </p>
-                        <p class="text-gray-300">
-                            Adaptamos nuestras soluciones a sus procesos, tiempos y objetivos, asegurando de que el resultado final sea útil desde el primer día. Nos gusta acompañar de cerca todo el desarrollo, aclarar dudas y ajustar lo necesario para que cada sistema o aplicación funcione tal como el cliente lo imaginó... o incluso mejor.
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="glass-card p-4 rounded-lg backdrop-blur-md border border-white/20 hover:border-white/40 transition-all">
-                            <h4 class="text-white font-semibold mb-2">Disponibilidad y atención</h4>
-                            <p class="text-sm text-gray-300">Con la capacidad de atenderte y comentario en todas las dudas</p>
-                        </div>
-                        <div class="glass-card p-4 rounded-lg backdrop-blur-md border border-white/20 hover:border-white/40 transition-all">
-                            <h4 class="text-white font-semibold mb-2">Innovación constante</h4>
-                            <p class="text-sm text-gray-300">Buscamos siempre nuevas ideas, tecnologías y soluciones creativas</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-16 w-full max-w-7xl">
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-purple-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20m0 0l-.75 3M9 20a6 6 0 1112 0m-8-3l.75-3M15 20l.75 3M15 20a6 6 0 01-12 0"></path>
-                    </svg>
-                    <h4 class="text-white font-semibold">Desarrollo de Sistemas Web</h4>
-                    <p class="text-xs text-gray-300 mt-2">Creamos sistemas y plataformas en línea a la medida</p>
-                </div>
-
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-purple-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                    </svg>
-                    <h4 class="text-white font-semibold">Dashboards y Sistemas de Gestión</h4>
-                    <p class="text-xs text-gray-300 mt-2">Construimos paneles con métricas, reportes y control de procesos</p>
-                </div>
-
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-purple-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                    </svg>
-                    <h4 class="text-white font-semibold">Desarrollo de Apps Móviles</h4>
-                    <p class="text-xs text-gray-300 mt-2">Diseñamos apps intuitivas para Android</p>
-                </div>
-
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-purple-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                    </svg>
-                    <h4 class="text-white font-semibold">Tiendas en Línea (E-commerce)</h4>
-                    <p class="text-xs text-gray-300 mt-2">Desarrollamos tiendas en línea completas y seguras</p>
-                </div>
-
-                <div class="service-card glass-card p-6 rounded-2xl backdrop-blur-md border border-white/20 hover:border-white/40 transition-all flex flex-col items-center text-center">
-                    <svg class="w-12 h-12 text-purple-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                    </svg>
-                    <h4 class="text-white font-semibold">Integraciones IA y Automatización</h4>
-                    <p class="text-xs text-gray-300 mt-2">Conectamos tus sistemas con APIs y servicios externos integramos IA</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 4: NOSOTROS -->
-        <section id="nosotros" class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20">
-            <h2 class="section-title text-5xl md:text-6xl font-light text-white text-center mb-16">
-                Nuestros valores<br>como equipo
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
-                <div class="value-item">
-                    <div class="flex items-start space-x-4">
-                        <div class="text-2xl">✨</div>
-                        <div>
-                            <h3 class="value-title text-2xl font-semibold text-white mb-3">Innovación constante</h3>
-                            <p class="value-text text-gray-300">
-                                Buscamos siempre nuevas ideas, tecnologías y soluciones creativas para mantenernos a la vanguardia.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="value-item">
-                    <div class="flex items-start space-x-4">
-                        <div class="text-2xl">👥</div>
-                        <div>
-                            <h3 class="value-title text-2xl font-semibold text-white mb-3">Profesionalismo joven</h3>
-                            <p class="value-text text-gray-300">
-                                Actuamos con responsabilidad, compromiso y calidad, combinando frescura juvenil con un alto estándar profesional.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="value-item">
-                    <div class="flex items-start space-x-4">
-                        <div class="text-2xl">🤝</div>
-                        <div>
-                            <h3 class="value-title text-2xl font-semibold text-white mb-3">Trabajo en equipo y crecimiento</h3>
-                            <p class="value-text text-gray-300">
-                                Colaboramos, aprendemos juntos y potenciamos el talento de cada integrante para alcanzar resultados excepcionales.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="value-item">
-                    <div class="flex items-start space-x-4">
-                        <div class="text-2xl">💎</div>
-                        <div>
-                            <h3 class="value-title text-2xl font-semibold text-white mb-3">Diseño con propósito</h3>
-                            <p class="value-text text-gray-300">
-                                Creamos productos modernos, elegantes y funcionales, cuidando cada detalle para ofrecer experiencias de alto valor.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 5: CONTACTO -->
-        <section id="contacto" class="section min-h-screen w-full flex flex-col justify-center items-center px-12 py-20">
-            <h2 class="section-title text-5xl md:text-6xl font-light text-white text-center mb-12">
-                Ponte en contacto
-            </h2>
-            
-            <form class="glass-card w-full max-w-2xl p-8 rounded-2xl backdrop-blur-md border border-white/20">
-                <div class="mb-6">
-                    <label class="block text-white font-medium mb-2">Nombre</label>
-                    <input type="text" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40" placeholder="Tu nombre">
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-white font-medium mb-2">Email</label>
-                    <input type="email" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40" placeholder="tu@email.com">
-                </div>
-
-                <div class="mb-6">
-                    <label class="block text-white font-medium mb-2">Mensaje</label>
-                    <textarea class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:border-white/40 h-32" placeholder="Tu mensaje..."></textarea>
-                </div>
-
-                <button type="submit" class="w-full glass-button px-6 py-3 rounded-lg text-white font-medium hover:bg-white/20 transition-all">
-                    Enviar mensaje
-                </button>
-            </form>
-        </section>
-    </div>
-
-    <script src="src/particles.js"></script>
-    <script src="src/scroll.js"></script>
-</body>
+  </body>
 </html>

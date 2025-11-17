@@ -2,6 +2,7 @@
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 
+
 // Resize handling
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -81,17 +82,7 @@ let particles = [];
 let particleCount = Math.floor((window.innerWidth * window.innerHeight) / 4000); // density scales with screen
 particleCount = Math.max(400, Math.min(1400, particleCount));
 
-function createParticles() {
-    particles = [];
-    for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle(canvas.width, canvas.height));
-    }
-}
-createParticles();
 
-// Static noise offscreen canvas (paint once, reuse) for subtle film grain
-let noiseCanvas = null;
-let noiseCtx = null;
 
 function createStaticNoise() {
     noiseCanvas = document.createElement('canvas');
