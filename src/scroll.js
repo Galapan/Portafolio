@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-link');
     const animatedElements = new Set();
+    const navbar = document.querySelector('nav');
+    let lastScrollTop = 0;
 
     // Check if element is in viewport
     function isInViewport(element) {
@@ -48,8 +50,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            // Scrolling DOWN - ocultar navbar
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling UP - mostrar navbar
+            navbar.style.transform = 'translateY(0)';
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     });
 
     // Update nav on load
     updateActiveNav();
+
+    // Animación suave
+    navbar.style.transition = 'transform 0.3s ease-in-out';
 });
