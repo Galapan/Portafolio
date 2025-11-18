@@ -2,83 +2,54 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('.nav-link');
+    const animatedElements = new Set();
 
-    // Function to check if element is in viewport
+    // Check if element is in viewport
     function isInViewport(element) {
         const rect = element.getBoundingClientRect();
-        return (
-            rect.top <= window.innerHeight * 0.5 &&
-            rect.bottom >= window.innerHeight * 0.5
-        );
+        return rect.top <= window.innerHeight * 0.7 && rect.bottom >= 0;
     }
 
-    // Update active nav link based on scroll position
+    // Update active nav link
     function updateActiveNav() {
         sections.forEach(section => {
             if (isInViewport(section)) {
                 const sectionId = section.getAttribute('id');
                 navLinks.forEach(link => {
-                    link.classList.remove('text-purple-300');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('text-purple-300');
-                    }
+                    link.classList.toggle('text-purple-300', link.getAttribute('href') === `#${sectionId}`);
+                    link.classList.toggle('text-white', link.getAttribute('href') !== `#${sectionId}`);
                 });
             }
         });
     }
 
-    // Smooth scroll with animation on click
+    // Smooth scroll on nav click
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = link.getAttribute('href').slice(1);
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-                // Add animation class to all elements in target section
-                const elements = targetSection.querySelectorAll('h1, h2, p, button, div');
-                elements.forEach((el, index) => {
-                    el.style.animation = 'none';
-                    el.offsetHeight; // Trigger reflow
-                    el.style.animation = `fadeInUp 0.6s ease-out ${index * 0.05}s forwards`;
-                    el.style.opacity = '0';
-                });
-
-                // Scroll to section
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            const target = document.getElementById(link.getAttribute('href').slice(1));
+            target?.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // Listen to scroll events
+    // Animate elements on scroll
     window.addEventListener('scroll', () => {
         updateActiveNav();
 
-        // Trigger animations when sections come into view
         sections.forEach(section => {
             if (isInViewport(section)) {
-                const cards = section.querySelectorAll('.project-card, .service-card, .value-item');
-                cards.forEach(card => {
-                    if (!card.classList.contains('animated')) {
-                        card.classList.add('animated');
-                        card.style.animation = `fadeInUp 0.6s ease-out forwards`;
+                const elementsToAnimate = section.querySelectorAll('.project-card, .service-card, .value-item, h1, h2');
+                elementsToAnimate.forEach(el => {
+                    if (!animatedElements.has(el)) {
+                        animatedElements.add(el);
+                        el.classList.add('animated');
+                        el.style.animation = 'fadeInUp 0.6s ease-out forwards';
                     }
                 });
             }
         });
     });
 
-    // Initial call to update nav
+    // Update nav on load
     updateActiveNav();
-
-    // Button animations
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-        });
-        button.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
 });
