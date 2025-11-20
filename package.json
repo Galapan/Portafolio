@@ -10,8 +10,10 @@
   "name": "portafolio",
   "version": "1.0.0",
   "scripts": {
-    "dev": "echo 'Dev mode'",
-    "build": "echo 'Build complete'",
-    "start": "echo 'Starting server'"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --minify",
+    "start": "cd backend && npm start",
+    "backend:dev": "cd backend && npm run dev",
+    "preview": "npx serve ."
   }
 }
