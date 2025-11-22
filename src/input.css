@@ -5,18 +5,32 @@
   scroll-behavior: smooth;
 }
 
+html {
+  background-color: #160c20; /* Fallback color matching the dark theme */
+}
+
 body {
-  /* Gradient tuned to image: left pink/purple -> center dark -> right blue glow */
+  /* Remove gradient from here and move to ::before to fix mobile scroll issue */
+  min-height: 100vh;
+  position: relative;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+}
+
+/* Fixed background layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   background: linear-gradient(
     135deg,
     rgba(102, 51, 102, 1) 0%,
     rgba(22, 12, 32, 1) 40%,
     rgba(46, 47, 129, 1) 100%
   );
-  background-attachment: fixed;
-  color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
+  /* No background-attachment: fixed needed here since the element itself is fixed */
 }
 
 /* Glassmorphism */
